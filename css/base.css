@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Tahoma;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background:linear-gradient(135deg,#00394D,#00080B) ;
+    color: #ffffff;
+}
+
+
+
+/* ---------------
+    frame picture
+ -----------------*/
+#frame-head{
+    right: 0px;
+    top: 50px;
+    width: 350px;
+    height: 75vh;
+    position: absolute;
+    margin: 50px 50px;
+    background:linear-gradient(135deg, #004259, #00151f) ;
+    border-radius: 10px;
+    color: #eeeeee;
+}
+
+#frame-head a{
+    text-decoration:none;
+    color: #cdcdcd;
+}
+
+
+#frame-head  li{
+    list-style: none;
+}
+
+/*picture*/
+.picture-img{
+    margin: 20px 100px;
+}
+
+.picture-text{
+    margin: 25px;
+    color: white;
+    text-align: center;
+}
+
+/*dropdown list*/
+#frame-head .dropdown{
+    top: 0px;
+    position: absolute;
+    background: rgba(255,255,255,0);
+}
+
+#head-bar-img{
+    margin: 20px 0px 5px 20px;
+}
+
+#frame-head   .dropdown-menu{
+    margin-left:15px ;
+    border:0px;
+    min-width: 60px;
+    color: white;
+    background: #1a1a1a;
+}
+
+/*message box*/
+.head-message{
+    width:300px;
+    height: 42vh;
+    margin: 20px 25px 20px 25px;
+    padding: 20px 0px 20px 20px;
+    background: rgba(0,0,0,0);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93) /*blur值为15px*/
+}
+.head-message ul{
+    margin-bottom: 20px;
+}
+.head-message ul>li{
+    margin:6px 0px 1px 5px;
+    size: 22px;
+}
+
+.head-message-title{
+    color: rgba(87,87,87,0.93);
+    size: 15px;
+    margin: 10px 0px 15px 0px;
+}
+.is-normal{
+    margin-right: 10px;
+    float: right;
+    color: rgba(0,254,32,0.93);
+    size: 18px;
+    text-align: center;
+}
+
+.not-normal{
+    margin-right: 10px;
+    float: right;
+    color: rgba(254, 0, 1, 0.93);
+    size: 18px;
+    text-align: center;
+    ;
+}
+
+/*------------------
+     Charts
+---------------------*/
+.charts-breakRule{
+    position: fixed;;
+    top: 100px;
+    left: 200px;
+    margin: 30px;
+    width: 500px;
+    height: 280px;
+    background: rgba(0,0,0,0);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93)
+}
+#chart-breakRule{
+    padding-bottom: 0px;
+}

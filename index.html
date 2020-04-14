@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宿舍管理系统</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/sideNav.css'>
+</head>
+<body>
+<div id="side-bar">
+    <div class="overlay"></div>
+    <!-- Sidebar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    宿舍管理系统
+                </a>
+            </li>
+            <div class="bar-header-s">日常操作管理</div>
+            <li>
+                <a href="#"><i class=" fa fa-bell"></i>&nbsp;学生违纪登记</a>
+            </li>
+            <li>
+                <a href="#"><i class=" fa fa-exchange"></i>&nbsp;物品借用登记</a>
+            </li>
+            <li>
+                <a href="#"><i class=" fa fa-wrench"></i>&nbsp;维修信息登记</a>
+            </li>
+            <li>
+                <a href="#"><i class=" fa fa-comment"></i>&nbsp;访客信息登记</a>
+            </li>
+        </ul>
+        <ul class="nav sidebar-nav second">
+            <div class="bar-header-s">学生住宿管理</div>
+            <li><a href="#"><i class="fa fa-users"></i>&nbsp;预分配宿舍</a></li>
+            <li><a href="#"><i class="fa fa-edit"></i>&nbsp;学生入住登记</a></li>
+            <li><a href="#"><i class="fa fa-minus-square"></i>&nbsp;学生退宿</a></li>
+            <li><a href="#"><i class="fa fa-retweet"></i>&nbsp;宿舍调整</a></li>
+            <li><a href="#"><i class="fa fa-share"></i>&nbsp;学生外宿</a></li>
+        </ul>
+    </nav>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+        </button>
+    </div>
+    <!-- /#wrapper -->
+</div>
+<div id="frame-head">
+
+    <figure class="picture-img">
+        <img class="img-circle" src="img/head_1.jpg" alt="头像" width="150px"/>
+        <figcaption class="picture-text">管理员1号</figcaption>
+    </figure>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-gear" id="head-bar-img"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#">关于</a></li>
+            <li><a href="#">帮助</a></li>
+            <li><a href="#">设置</a></li>
+        </ul>
+    </li>
+
+    <div class="head-message">
+        <ul>
+            <div class="head-message-title">基本信息</div>
+            <li>
+                宿管编号：<a>154153</a>
+            </li>
+            <li>
+                职务：<a>宿管</a>
+            </li>
+            <li>
+                联系方式：<a>1535438543</a>
+            </li>
+        </ul>
+        <ul>
+            <div class="head-message-title">辖区信息</div>
+            <li>
+                分管区域：<a>45</a>&nbsp;栋
+            </li>
+            <li>
+                宿舍数量：<a>70</a>/<a>80</a>&nbsp;(已住/荷载)
+            </li>
+            <li>
+                辖区人数：<a>280</a>/<a>320</a>&nbsp;(已住/荷载)
+            </li>
+            <li>
+                辖区月违纪：<a>3</a>&nbsp;人次
+            </li>
+            <li>
+                辖区用电量(本月)：<a id="electric">4999</a>&nbsp;KW.h<div class="is-normal" id="electric-nol"></div>
+            </li>
+            <li>
+                辖区用水量(本月)：<a id="water">5000</a>&nbsp;m<sup>3</sup><div class="is-normal" id="water-nol"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="charts">
+    <div class="charts-breakRule">
+        <canvas id="chart-breakRule"></canvas>
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" ></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var trigger = $('.hamburger'),
+            overlay = $('.overlay'),
+            isClosed = false;
+
+        trigger.click(function () {
+            hamburger_cross();
+        });
+
+        function hamburger_cross() {
+
+            if (isClosed == true) {
+                overlay.hide();
+                trigger.removeClass('is-open');
+                trigger.addClass('is-closed');
+                isClosed = false;
+            } else {
+                overlay.show();
+                trigger.removeClass('is-closed');
+                trigger.addClass('is-open');
+                isClosed = true;
+            }
+        }
+
+        $('[data-toggle="offcanvas"]').click(function () {
+            $('#side-bar').toggleClass('toggled');
+        });
+    });
+</script>
+<script type="text/javascript">
+    var electric = document.getElementById("electric");
+    var water = document.getElementById("water");
+    var electric_nol =  document.getElementById("electric-nol") ;
+    var water_nol =document.getElementById("water-nol");
+    if(electric.textContent >= 5000 ){
+        electric_nol.className = "not-normal";
+        electric_nol.innerHTML="反常";
+    }else {
+        electric_nol.className = "is-normal" ;
+        electric_nol.innerHTML="正常";
+    }
+    if(water.textContent >= 5000 ){
+        water_nol.className = "not-normal";
+        water_nol.innerHTML="反常";
+    }else {
+        water_nol.className = "is-normal";
+        water_nol.innerHTML="正常";
+    }
+</script>
+<script type="text/javascript">
+    //获取天数数组
+    var newdate = new Date();//当前日期
+    var month = newdate.getMonth()+1;//当前月份
+    var day = newdate.getDate();//当前号数
+    var DAYS = (function(){
+        var arr = [];
+        for(var i=day; i>0; i--){
+            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        }
+        return arr.reverse();
+    })();
+
+    //随机违纪数
+    var breakRule = (function () {
+        var arr = [];
+        for(var i=0;i<day;i++){
+            var r=Math.ceil(Math.random()*10);
+            arr.push(r + '');
+        }
+        return arr.reverse();
+    })();
+
+
+        var ctx = document.getElementById("chart-breakRule").getContext("2d");
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: DAYS,
+            datasets: [{
+                label: "本月违纪",
+                backgroundColor: 'rgb(0,191,255)',
+                borderColor: 'rgb(0,169,255)',
+                data: breakRule,
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: '本月违纪',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend:{
+                display:false
+            },
+            label:{
+                font:{
+                    color:"rgba(255,255,255,0.73)"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>
