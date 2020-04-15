@@ -113,8 +113,24 @@
     </div>
 </div>
 <div id="charts">
-    <div class="charts-breakRule">
+    <div class="Cbox charts-breakRule">
         <canvas id="chart-breakRule"></canvas>
+    </div>
+    <!--   chart-DormitoryNum -->
+    <div class="Cbox chart-DNum">
+        <canvas id="chart-DNum"></canvas>
+    </div>
+    <!--   chart-StudentNum -->
+    <div class="Cbox chart-SNum">
+        <canvas id="chart-SNum"></canvas>
+    </div>
+    <!--   chart-ElectricNum -->
+    <div class="Cbox chart-ENum">
+        <canvas id="chart-ENum"></canvas>
+    </div>
+    <!--   chart-WaterNum -->
+    <div class="Cbox chart-WNum">
+        <canvas id="chart-WNum"></canvas>
     </div>
 </div>
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
@@ -236,8 +252,214 @@
             }
         }
     });
+</script>
+<script type="text/javascript">
+    var ctx = document.getElementById("chart-DNum").getContext("2d");
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['已住数量','未住数量'],
+            datasets: [{
+                backgroundColor:['rgb(0,191,255)','rgb(0,255,96)'] ,
+                data:['70','10'] ,
+            }]
+        },
 
 
+        // Configuration options go here
+        options: {
+
+            title: {
+                display: true,
+                text: '宿舍入住情况',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend:{
+                display:true,
+                position:'right',
+            },
+            label:{
+                font:{
+                    color:"rgba(255,255,255,0.73)"
+                }
+            },
+
+        }
+    });
+</script>
+<script type="text/javascript">
+    var ctx = document.getElementById("chart-SNum").getContext("2d");
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['已住数量','剩余可容纳量'],
+            datasets: [{
+                backgroundColor:['rgb(0,191,255)','rgb(0,255,96)'] ,
+                data:['280','40'] ,
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+
+            title: {
+                display: true,
+                text: '辖区人数情况',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend:{
+                display:true,
+                position:'right',
+            },
+            label:{
+                font:{
+                    color:"rgba(255,255,255,0.73)"
+                }
+            },
+
+        }
+    });
+</script>
+<script type="text/javascript">
+    //获取天数数组
+    var newdate = new Date();//当前日期
+    var month = newdate.getMonth()+1;//当前月份
+    var day = newdate.getDate();//当前号数
+    var DAYS = (function(){
+        var arr = [];
+        for(var i=day; i>0; i--){
+            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        }
+        return arr.reverse();
+    })();
+
+    //随机违纪数
+    var electricNum = (function () {
+        var arr = [];
+        for(var i=0;i<day;i++){
+            var r=Math.ceil(Math.random()*100);
+            arr.push(r + '');
+        }
+        return arr.reverse();
+    })();
+
+
+    var ctx = document.getElementById("chart-ENum").getContext("2d");
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: DAYS,
+            datasets: [{
+                label: "本月用电量",
+                backgroundColor: 'rgb(0,191,255)',
+                borderColor: 'rgba(0,169,255,0.65)',
+                data: electricNum,
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: '本月用电量',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend:{
+                display:false
+            },
+            label:{
+                font:{
+                    color:"rgba(255,255,255,0.73)"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script type="text/javascript">
+    //获取天数数组
+    var newdate = new Date();//当前日期
+    var month = newdate.getMonth()+1;//当前月份
+    var day = newdate.getDate();//当前号数
+    var DAYS = (function(){
+        var arr = [];
+        for(var i=day; i>0; i--){
+            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        }
+        return arr.reverse();
+    })();
+
+    //随机违纪数
+    var waterNum = (function () {
+        var arr = [];
+        for(var i=0;i<day;i++){
+            var r=Math.ceil(Math.random()*10);
+            arr.push(r + '');
+        }
+        return arr.reverse();
+    })();
+
+
+    var ctx = document.getElementById("chart-WNum").getContext("2d");
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: DAYS,
+            datasets: [{
+                label: "本月用水量",
+                backgroundColor: 'rgb(0,191,255)',
+                borderColor: 'rgba(0,169,255,0.68)',
+                data: waterNum,
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+            title: {
+                display: true,
+                text: '本月用水量',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend:{
+                display:false
+            },
+            label:{
+                font:{
+                    color:"rgba(255,255,255,0.73)"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
 </script>
 </body>
 </html>

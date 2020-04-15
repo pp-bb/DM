@@ -112,17 +112,23 @@ body{
 /*------------------
      Charts
 ---------------------*/
-.charts-breakRule{
-    position: fixed;;
-    top: 100px;
+#charts{
+    top:0;
+    position: fixed;
+    box-sizing: border-box;
+    width: 75vw;
     left: 200px;
-    margin: 30px;
-    width: 500px;
-    height: 280px;
+    display: flex;
+    max-width: 60vw;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.Cbox{
     background: rgba(0,0,0,0);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93)
-}
-#chart-breakRule{
-    padding-bottom: 0px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93);
+    width: 500px;
+    height: 280px;
+    min-width: 500px;
+    margin: 20px;
 }
