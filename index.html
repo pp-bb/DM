@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel='stylesheet' href='css/sideNav.css'>
+
 </head>
 <body>
 <div id="side-bar">
@@ -48,94 +49,109 @@
     </nav>
     <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <div id="wrapper">
         <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
             <span class="hamb-top"></span>
             <span class="hamb-middle"></span>
             <span class="hamb-bottom"></span>
         </button>
     </div>
-    <!-- /#wrapper -->
 </div>
-<div id="frame-head">
+<div class="DM-container">
 
-    <figure class="picture-img">
-        <img class="img-circle" src="img/head_1.jpg" alt="头像" width="150px"/>
-        <figcaption class="picture-text">管理员1号</figcaption>
-    </figure>
+    <div id="charts">
+        <div class=" Cbox charts-breakRule">
+            <canvas id="chart-breakRule"></canvas>
+        </div>
+        <!--   chart-DormitoryNum -->
+        <div class=" Cbox chart-DNum" style="display: block">
+            <div class="DS">
+                <button class="btu-chooseDS" id="btn-CS">
+                    <i class="fa fa-exchange"></i>人数情况
+                </button>
+            </div>
 
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-gear" id="head-bar-img"></i>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="#">关于</a></li>
-            <li><a href="#">帮助</a></li>
-            <li><a href="#">设置</a></li>
-        </ul>
-    </li>
+            <canvas id="chart-DNum"></canvas>
+        </div>
+        <!--   chart-StudentNum -->
+        <div class=" Cbox chart-SNum" style="display: none">
+            <div class="DS">
+                <button class="btu-chooseDS" id="btn-CD">
+                    <i class="fa fa-exchange"></i>宿舍情况
+                </button>
+            </div>
 
-    <div class="head-message">
-        <ul>
-            <div class="head-message-title">基本信息</div>
-            <li>
-                宿管编号：<a>154153</a>
-            </li>
-            <li>
-                职务：<a>宿管</a>
-            </li>
-            <li>
-                联系方式：<a>1535438543</a>
-            </li>
-        </ul>
-        <ul>
-            <div class="head-message-title">辖区信息</div>
-            <li>
-                分管区域：<a>45</a>&nbsp;栋
-            </li>
-            <li>
-                宿舍数量：<a>70</a>/<a>80</a>&nbsp;(已住/荷载)
-            </li>
-            <li>
-                辖区人数：<a>280</a>/<a>320</a>&nbsp;(已住/荷载)
-            </li>
-            <li>
-                辖区月违纪：<a>3</a>&nbsp;人次
-            </li>
-            <li>
-                辖区用电量(本月)：<a id="electric">4999</a>&nbsp;KW.h<div class="is-normal" id="electric-nol"></div>
-            </li>
-            <li>
-                辖区用水量(本月)：<a id="water">5000</a>&nbsp;m<sup>3</sup><div class="is-normal" id="water-nol"></div>
-            </li>
-        </ul>
+            <canvas id="chart-SNum"></canvas>
+        </div>
+        <!--   chart-ElectricNum -->
+        <div class=" Cbox chart-ENum">
+            <canvas id="chart-ENum"></canvas>
+        </div>
+        <!--   chart-WaterNum -->
+        <div class=" Cbox chart-WNum">
+            <canvas id="chart-WNum"></canvas>
+        </div>
+    </div>
+    <div id="frame-head">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-gear" id="head-bar-img"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">帮助</a></li>
+                <li><a href="#">设置</a></li>
+            </ul>
+        </li>
+        <figure class="picture-img">
+            <img class="img-circle" src="img/head_1.jpg" alt="头像" width="150px"/>
+            <figcaption class="picture-text">管理员1号</figcaption>
+        </figure>
+
+
+        <div class="head-message">
+            <ul>
+                <div class="head-message-title">基本信息</div>
+                <li>
+                    宿管编号：<a>154153</a>
+                </li>
+                <li>
+                    职务：<a>宿管</a>
+                </li>
+                <li>
+                    联系方式：<a>1535438543</a>
+                </li>
+            </ul>
+            <ul>
+                <div class="head-message-title">辖区信息</div>
+                <li>
+                    分管区域：<a>45</a>&nbsp;栋
+                </li>
+                <li>
+                    宿舍数量：<a>70</a>/<a>80</a>&nbsp;(已住/荷载)
+                </li>
+                <li>
+                    辖区人数：<a>280</a>/<a>320</a>&nbsp;(已住/荷载)
+                </li>
+                <li>
+                    辖区月违纪：<a>3</a>&nbsp;人次
+                </li>
+                <li>
+                    辖区用电量(本月)：<a id="electric">4999</a>&nbsp;KW.h
+                    <div class="is-normal" id="electric-nol"></div>
+                </li>
+                <li>
+                    辖区用水量(本月)：<a id="water">5000</a>&nbsp;m<sup>3</sup>
+                    <div class="is-normal" id="water-nol"></div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-<div id="charts">
-    <div class="Cbox charts-breakRule">
-        <canvas id="chart-breakRule"></canvas>
-    </div>
-    <!--   chart-DormitoryNum -->
-    <div class="Cbox chart-DNum">
-        <canvas id="chart-DNum"></canvas>
-    </div>
-    <!--   chart-StudentNum -->
-    <div class="Cbox chart-SNum">
-        <canvas id="chart-SNum"></canvas>
-    </div>
-    <!--   chart-ElectricNum -->
-    <div class="Cbox chart-ENum">
-        <canvas id="chart-ENum"></canvas>
-    </div>
-    <!--   chart-WaterNum -->
-    <div class="Cbox chart-WNum">
-        <canvas id="chart-WNum"></canvas>
-    </div>
-</div>
+
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         var trigger = $('.hamburger'),
@@ -169,32 +185,32 @@
 <script type="text/javascript">
     var electric = document.getElementById("electric");
     var water = document.getElementById("water");
-    var electric_nol =  document.getElementById("electric-nol") ;
-    var water_nol =document.getElementById("water-nol");
-    if(electric.textContent >= 5000 ){
+    var electric_nol = document.getElementById("electric-nol");
+    var water_nol = document.getElementById("water-nol");
+    if (electric.textContent >= 5000) {
         electric_nol.className = "not-normal";
-        electric_nol.innerHTML="反常";
-    }else {
-        electric_nol.className = "is-normal" ;
-        electric_nol.innerHTML="正常";
+        electric_nol.innerHTML = "反常";
+    } else {
+        electric_nol.className = "is-normal";
+        electric_nol.innerHTML = "正常";
     }
-    if(water.textContent >= 5000 ){
+    if (water.textContent >= 5000) {
         water_nol.className = "not-normal";
-        water_nol.innerHTML="反常";
-    }else {
+        water_nol.innerHTML = "反常";
+    } else {
         water_nol.className = "is-normal";
-        water_nol.innerHTML="正常";
+        water_nol.innerHTML = "正常";
     }
 </script>
 <script type="text/javascript">
     //获取天数数组
     var newdate = new Date();//当前日期
-    var month = newdate.getMonth()+1;//当前月份
+    var month = newdate.getMonth() + 1;//当前月份
     var day = newdate.getDate();//当前号数
-    var DAYS = (function(){
+    var DAYS = (function () {
         var arr = [];
-        for(var i=day; i>0; i--){
-            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        for (var i = day; i > 0; i--) {
+            arr.push(month + '-' + (i < 10 ? '0' + i : i + ''));
         }
         return arr.reverse();
     })();
@@ -202,15 +218,15 @@
     //随机违纪数
     var breakRule = (function () {
         var arr = [];
-        for(var i=0;i<day;i++){
-            var r=Math.ceil(Math.random()*10);
+        for (var i = 0; i < day; i++) {
+            var r = Math.ceil(Math.random() * 10);
             arr.push(r + '');
         }
         return arr.reverse();
     })();
 
 
-        var ctx = document.getElementById("chart-breakRule").getContext("2d");
+    var ctx = document.getElementById("chart-breakRule").getContext("2d");
 
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -235,18 +251,18 @@
                 text: '本月违纪',
                 fontColor: "rgba(255,255,255,0.68)",
             },
-            legend:{
-                display:false
+            legend: {
+                display: false
             },
-            label:{
-                font:{
-                    color:"rgba(255,255,255,0.73)"
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
                 }
             },
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
             }
@@ -261,10 +277,10 @@
 
         // The data for our dataset
         data: {
-            labels: ['已住数量','未住数量'],
+            labels: ['已住数量', '剩余宿舍数量'],
             datasets: [{
-                backgroundColor:['rgb(0,191,255)','rgb(0,255,96)'] ,
-                data:['70','10'] ,
+                backgroundColor: ['rgb(0,191,255)', 'rgb(0,255,96)'],
+                data: ['70', '10'],
             }]
         },
 
@@ -277,13 +293,13 @@
                 text: '宿舍入住情况',
                 fontColor: "rgba(255,255,255,0.68)",
             },
-            legend:{
-                display:true,
-                position:'right',
+            legend: {
+                display: true,
+                position: 'right',
             },
-            label:{
-                font:{
-                    color:"rgba(255,255,255,0.73)"
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
                 }
             },
 
@@ -298,10 +314,10 @@
 
         // The data for our dataset
         data: {
-            labels: ['已住数量','剩余可容纳量'],
+            labels: ['已住数量', '剩余可容纳量'],
             datasets: [{
-                backgroundColor:['rgb(0,191,255)','rgb(0,255,96)'] ,
-                data:['280','40'] ,
+                backgroundColor: ['rgb(0,191,255)', 'rgb(0,255,96)'],
+                data: ['543', '354'],
             }]
         },
 
@@ -314,13 +330,13 @@
                 text: '辖区人数情况',
                 fontColor: "rgba(255,255,255,0.68)",
             },
-            legend:{
-                display:true,
-                position:'right',
+            legend: {
+                display: true,
+                position: 'right',
             },
-            label:{
-                font:{
-                    color:"rgba(255,255,255,0.73)"
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
                 }
             },
 
@@ -330,12 +346,12 @@
 <script type="text/javascript">
     //获取天数数组
     var newdate = new Date();//当前日期
-    var month = newdate.getMonth()+1;//当前月份
+    var month = newdate.getMonth() + 1;//当前月份
     var day = newdate.getDate();//当前号数
-    var DAYS = (function(){
+    var DAYS = (function () {
         var arr = [];
-        for(var i=day; i>0; i--){
-            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        for (var i = day; i > 0; i--) {
+            arr.push(month + '-' + (i < 10 ? '0' + i : i + ''));
         }
         return arr.reverse();
     })();
@@ -343,8 +359,8 @@
     //随机违纪数
     var electricNum = (function () {
         var arr = [];
-        for(var i=0;i<day;i++){
-            var r=Math.ceil(Math.random()*100);
+        for (var i = 0; i < day; i++) {
+            var r = Math.ceil(Math.random() * 100);
             arr.push(r + '');
         }
         return arr.reverse();
@@ -376,18 +392,18 @@
                 text: '本月用电量',
                 fontColor: "rgba(255,255,255,0.68)",
             },
-            legend:{
-                display:false
+            legend: {
+                display: false
             },
-            label:{
-                font:{
-                    color:"rgba(255,255,255,0.73)"
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
                 }
             },
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
             }
@@ -397,12 +413,12 @@
 <script type="text/javascript">
     //获取天数数组
     var newdate = new Date();//当前日期
-    var month = newdate.getMonth()+1;//当前月份
+    var month = newdate.getMonth() + 1;//当前月份
     var day = newdate.getDate();//当前号数
-    var DAYS = (function(){
+    var DAYS = (function () {
         var arr = [];
-        for(var i=day; i>0; i--){
-            arr.push(month+'-'+(i < 10 ? '0' + i : i + ''));
+        for (var i = day; i > 0; i--) {
+            arr.push(month + '-' + (i < 10 ? '0' + i : i + ''));
         }
         return arr.reverse();
     })();
@@ -410,8 +426,8 @@
     //随机违纪数
     var waterNum = (function () {
         var arr = [];
-        for(var i=0;i<day;i++){
-            var r=Math.ceil(Math.random()*10);
+        for (var i = 0; i < day; i++) {
+            var r = Math.ceil(Math.random() * 100);
             arr.push(r + '');
         }
         return arr.reverse();
@@ -443,23 +459,38 @@
                 text: '本月用水量',
                 fontColor: "rgba(255,255,255,0.68)",
             },
-            legend:{
-                display:false
+            legend: {
+                display: false
             },
-            label:{
-                font:{
-                    color:"rgba(255,255,255,0.73)"
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
                 }
             },
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                        beginAtZero: true
                     }
                 }]
             }
         }
     });
+</script>
+<script type="text/javascript">
+    var btnCS = document.getElementById("btn-CS");
+    var btnCD = document.getElementById("btn-CD");
+    var SNum = document.getElementsByClassName("chart-SNum");
+    var DNum = document.getElementsByClassName("chart-DNum");
+    btnCS.onclick = function () {
+        SNum[0].style.display='block';
+        DNum[0].style.display='none';
+    };
+
+    btnCD.onclick = function () {
+        DNum[0].style.display='block';
+        SNum[0].style.display='none';
+    };
 </script>
 </body>
 </html>

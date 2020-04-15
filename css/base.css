@@ -3,30 +3,55 @@
     padding: 0;
     text-decoration: none;
     font-family: Tahoma;
-    box-sizing: border-box;
 }
 
-body{
+body,
+html{
     min-height: 100vh;
     background:linear-gradient(135deg,#00394D,#00080B) ;
     color: #ffffff;
 }
+body h1,
+body h2,
+body h3,
+body h4 {
+    color: rgba(255, 255, 255, 0.9);
+}
+body a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+}
+body a:hover {
+    color: #ffffff;
+}
+body li{
+    list-style: none;
+}
 
-
-
+.DM-container{
+    top:0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+}
 /* ---------------
     frame picture
  -----------------*/
 #frame-head{
-    right: 0px;
-    top: 50px;
+    right: 0;
     width: 350px;
     height: 75vh;
-    position: absolute;
-    margin: 50px 50px;
+    display: flex;
+    margin-top: 80px;
+    margin-right: 50px;
     background:linear-gradient(135deg, #004259, #00151f) ;
     border-radius: 10px;
     color: #eeeeee;
+    flex-wrap: wrap;
 }
 
 #frame-head a{
@@ -35,17 +60,17 @@ body{
 }
 
 
-#frame-head  li{
-    list-style: none;
-}
+
 
 /*picture*/
 .picture-img{
-    margin: 20px 100px;
+    margin-top: 20px;
+    margin-left: 19%;
+    width: 150px;
 }
 
 .picture-text{
-    margin: 25px;
+    margin: 25px 25px 0 25px ;
     color: white;
     text-align: center;
 }
@@ -53,7 +78,8 @@ body{
 /*dropdown list*/
 #frame-head .dropdown{
     top: 0px;
-    position: absolute;
+    margin: 0px;
+    width: 32px;
     background: rgba(255,255,255,0);
 }
 
@@ -62,18 +88,20 @@ body{
 }
 
 #frame-head   .dropdown-menu{
+    top: 39px;
     margin-left:15px ;
     border:0px;
     min-width: 60px;
     color: white;
     background: #1a1a1a;
+    position: absolute;
 }
 
 /*message box*/
 .head-message{
     width:300px;
     height: 42vh;
-    margin: 20px 25px 20px 25px;
+    margin: 0px 25px 20px 25px;
     padding: 20px 0px 20px 20px;
     background: rgba(0,0,0,0);
     border-radius: 5px;
@@ -113,22 +141,60 @@ body{
      Charts
 ---------------------*/
 #charts{
-    top:0;
-    position: fixed;
+    margin:auto;
+    padding-top: 80px;
     box-sizing: border-box;
-    width: 75vw;
-    left: 200px;
-    display: flex;
-    max-width: 60vw;
+    display: flex !important;
+    max-width: 1350px;
+    flex-grow:1;
     flex-wrap: wrap;
     justify-content:space-around;
+    flex-direction:row;
+}
+#charts i,li{
+    color: #c2c2c2;
 }
 .Cbox{
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0.06);
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93);
-    width: 500px;
-    height: 280px;
+    min-height: 280px;
+    max-width: 600px;
     min-width: 500px;
     margin: 20px;
+    overflow: hidden;
+    flex-grow:1;
+}
+
+.chart-DNum{
+    position: relative;
+}
+.chart-SNum{
+    position: relative;
+}
+
+.DS{
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    margin-right:15px ;
+}
+
+.btu-chooseDS{
+    width: 100px;
+    height: 25px;
+    background:linear-gradient(0deg, #004259, #00151f) ;
+    border-radius: 3px;
+    border: 0px;
+    color: #eeeeee;
+}
+
+.btu-chooseDS :hover,
+.btu-chooseDS:focus ,
+.btu-chooseDS:active:focus
+{
+    background:linear-gradient(0deg, #005372, #002638) ;
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
 }
