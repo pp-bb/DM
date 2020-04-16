@@ -28,6 +28,16 @@ body li{
     list-style: none;
 }
 
+.contentBox{
+    margin:auto;
+    box-sizing: border-box;
+    max-width: 1350px;
+}
+table{
+    color: #eeeeee;
+    table-layout: fixed;
+}
+
 .DM-container{
     top:0;
     box-sizing: border-box;

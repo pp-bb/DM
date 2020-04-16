@@ -10,7 +10,7 @@ document.writeln("                </a>");
 document.writeln("            </li>");
 document.writeln("            <div class=\'bar-header-s\'>日常操作管理</div>");
 document.writeln("            <li>");
-document.writeln("                <a href=\'#\'><i class=\' fa fa-bell\'></i>&nbsp;学生违纪登记</a>");
+document.writeln("                <a href=\'BR_register.html'><i class=\' fa fa-bell\'></i>&nbsp;学生违纪登记</a>");
 document.writeln("            </li>");
 document.writeln("            <li>");
 document.writeln("                <a href=\'#\'><i class=\' fa fa-exchange\'></i>&nbsp;物品借用登记</a>");

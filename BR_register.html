@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/commonLink.js"></script>
+    <link rel="stylesheet" href="css/BR_register.css">
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.16.0/bootstrap-table.css" rel="stylesheet">
+</head>
+<body>
+<script src="js/commonHtml-sideNav.js" charset="utf-8" type="text/javascript"></script>
+<div class="DM-container">
+    <div class="contentBox BR_register" >
+        <table class="table table-bordered" id="table-BR">
+            <caption>今日违纪记录</caption>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>宿舍号</th>
+                <th>时间</th>
+                <th>违纪备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>黄茂平</td>
+                <td>13546</td>
+                <td>19-410</td>
+                <td>2020.4.1</td>
+                <td>偷看宿管阿姨洗澡</td>
+            </tr>
+            <tr>
+                <td>李贤勋</td>
+                <td>46841</td>
+                <td>19-408</td>
+                <td>2020.4.1</td>
+                <td>抢了宿管大爷孙子的棒棒糖</td>
+            </tr>
+            <tr>
+                <td>李润东</td>
+                <td>4681351</td>
+                <td>19-408</td>
+                <td>2020.4.1</td>
+                <td>抢了宿管大爷的棒棒糖</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
+</div>
+<script src="js/commonScript.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.16.0/bootstrap-table.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-table/1.16.0/locale/bootstrap-table-zh-CN.js"></script>
+<script src="js/BR_register.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $('#table-BR').bootstrapTable({
+        field: 'params',
+        title: "参数",
+        width: 300,
+        class: 'colStyle',
+        formatter: paramsMatter,
+    });
+
+    function paramsMatter(value, row, BR_register) {
+        var values = row.params;
+        values = values.replace(/\},/, '},\n');//换行
+        var span = document.createElement('span');
+        span.setAttribute('title', values);
+        span.innerHTML = row.params;
+        return span.outerHTML;
+    }
+
+</script>
+</body>
+</html>
