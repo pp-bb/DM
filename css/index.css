@@ -1,0 +1,61 @@
+/*------------------
+     Charts
+---------------------*/
+#charts{
+    margin:auto;
+    padding-top: 80px;
+    box-sizing: border-box;
+    display: flex !important;
+    max-width: 1350px;
+    flex-grow:1;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    flex-direction:row;
+}
+#charts i,li{
+    color: #c2c2c2;
+}
+.Cbox{
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93);
+    min-height: 280px;
+    max-width: 600px;
+    min-width: 500px;
+    margin: 20px;
+    overflow: hidden;
+    flex-grow:1;
+}
+
+.chart-DNum{
+    position: relative;
+}
+.chart-SNum{
+    position: relative;
+}
+
+.DS{
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    margin-right:15px ;
+}
+
+.btu-chooseDS{
+    width: 100px;
+    height: 25px;
+    background:linear-gradient(0deg, #004259, #00151f) ;
+    border-radius: 3px;
+    border: 0px;
+    color: #eeeeee;
+}
+
+.btu-chooseDS :hover,
+.btu-chooseDS:focus ,
+.btu-chooseDS:active:focus
+{
+    background:linear-gradient(0deg, #005372, #002638) ;
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
