@@ -8,9 +8,19 @@
 
 }
 
+tbody>tr:hover,tbody>tr:active{
+    color: #eeeeee;
+    background-color: #00394d;
+}
+.table_box{
+    height: 600px;
+}
+
 #table-BR {
     width: 1100px;
     border: #eeeeee solid 1px;
+    margin: 50px;
+    overflow-y:scroll
 }
 
 #table-BR td th {
@@ -21,14 +31,38 @@
     overflow: hidden;
 }
 
+#table-BR>caption{
+    border: #eeeeee solid 1px;
+    color: #eeeeee;
+}
+
+
 #table-BR th:nth-child(5){
+     width: 300px;
+     white-space: nowrap;
+     overflow : hidden;
+     text-overflow: ellipsis;
+     /*display: -webkit-box;*/
+     /*-webkit-line-clamp: 1; !* 限制在一个块元素显示的文本的行数 *!*/
+     /*-webkit-box-orient: vertical; !* 垂直排列 *!*/
+     /*word-break: break-all;  !* 内容自动换行 *!*/
+ }
+#table-BR td:nth-child(5){
     width: 300px;
     white-space: nowrap;
     overflow : hidden;
     text-overflow: ellipsis;
-    /*display: -webkit-box;*/
-    /*-webkit-line-clamp: 1; !* 限制在一个块元素显示的文本的行数 *!*/
-    /*-webkit-box-orient: vertical; !* 垂直排列 *!*/
-    /*word-break: break-all;  !* 内容自动换行 *!*/
+}
+.fixed-table-loading{
+    display: none;
 }
 
+.dataDetailsBox{
+    width: 400px;
+    height:auto;
+    border-radius: 5px;
+    background-color: #00688c;
+    color: #bdbdbd;
+    display: block;
+    position: absolute;
+}

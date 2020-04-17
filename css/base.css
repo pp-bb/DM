@@ -38,6 +38,11 @@ table{
     table-layout: fixed;
 }
 
+table td:hover,td:active,tbody>tr:hover,tbody>tr:active{
+    color: #eeeeee;
+    background: #00394d;
+}
+
 .DM-container{
     top:0;
     box-sizing: border-box;
