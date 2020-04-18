@@ -43,6 +43,24 @@ table td:hover,td:active,tbody>tr:hover,tbody>tr:active{
     background: #00394d;
 }
 
+input{
+    color: #070707;
+    -webkit-text-fill-color: rgba(122, 122, 122, 0.67);
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 14px;
+    font-family: "Microsoft soft";
+}
+
+input:focus{
+    color: #00080B;
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(11, 100, 171, 0.6)
+}
 .DM-container{
     top:0;
     box-sizing: border-box;
@@ -52,6 +70,7 @@ table td:hover,td:active,tbody>tr:hover,tbody>tr:active{
     flex-direction:row;
     justify-content:center;
     align-content:space-around;
+    overflow: hidden;
 }
 /* ------------------------------------
              frame picture

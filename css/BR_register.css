@@ -4,21 +4,21 @@
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93); /*blur值为15px*/
     height: 80vh;
+    color: #c2c2c2;
     margin-top: 70px;
 
 }
 
 tbody>tr:hover,tbody>tr:active{
-    color: #eeeeee;
+    color: #c2c2c2;
     background-color: #00394d;
 }
 .table_box{
-    height: 600px;
 }
 
 #table-BR {
     width: 1100px;
-    border: #eeeeee solid 1px;
+    border: #c2c2c2 solid 1px;
     margin: 50px;
     overflow-y:scroll
 }
@@ -32,8 +32,8 @@ tbody>tr:hover,tbody>tr:active{
 }
 
 #table-BR>caption{
-    border: #eeeeee solid 1px;
-    color: #eeeeee;
+    border:#c2c2c2 solid 1px;
+    color: #c2c2c2;
 }
 
 
@@ -58,11 +58,64 @@ tbody>tr:hover,tbody>tr:active{
 }
 
 .dataDetailsBox{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 400px;
     height:auto;
     border-radius: 5px;
-    background-color: #00688c;
-    color: #bdbdbd;
-    display: block;
-    position: absolute;
+    background-color: #1c1c1c;
+    color:#c2c2c2;
+    display: none;
+    padding: 8px 8px 8px 15px;
 }
+
+/*----------------------------------
+
+       break rule edit box
+
+------------------------------------*/
+
+.BR_edit_box{
+    width: 1100px;
+    margin: 0px 50px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.58)
+}
+.BR_edit_line{
+    width: 1080px;
+    margin: 20px 0px;
+    height: 80px;
+    font-size: 18px;
+}
+.BR_edit_message{
+    float: left;
+    margin: 15px 0px 15px 120px;
+
+}
+.BR_edit_message_right{
+    margin: 15px 120px 15px 0px;
+    float: right;
+}
+.BR_btn_ensure{
+    text-align-last:justify;
+    text-align:justify;
+    border:none;
+    padding: 12px 60px;
+    width: 235px;
+    font-family: Tahoma,sans-serif;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background-size: 200%;
+    transition: 0.6s;
+}
+.BR_btn_ensure{
+    background-image: linear-gradient(to left, #006794, #004c7b,#006794);
+}
+.BR_btn_ensure:hover{
+     background-position: right;
+ }

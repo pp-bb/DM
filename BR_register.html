@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script src="js/commonLink.js"></script>
 
-<!--    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">-->
+    <!--    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/BR_register.css">
 </head>
 <body>
@@ -30,14 +30,15 @@
                     <td>19-410</td>
                     <td>2020.4.1</td>
                     <td class="noWrapDiv">偷看宿管阿姨洗澡偷看宿管阿姨洗澡偷看宿管阿姨洗澡偷看宿管阿姨洗澡</td>
-                    <div class="dataDetailsBox"></div>
+                    <div class="dataDetailsBox">
+                    </div>
                 </tr>
                 <tr>
                     <td>李贤勋</td>
                     <td>46841</td>
                     <td>19-408</td>
                     <td>2020.4.1</td>
-                    <td>抢了宿管大爷孙子的棒棒糖</td>
+                    <td>抢了宿管大爷孙子的棒棒糖抢了宿管大爷孙子的棒棒糖</td>
                 </tr>
                 <tr>
                     <td>李润东</td>
@@ -48,27 +49,64 @@
                 </tr>
                 </tbody>
             </table>
-        </div>
+
+
 
     </div>
+        <div class="BR_edit_box">
+    <div class="BR_edit_line">
+        <div class="BR_edit_message">&nbsp;&nbsp;&nbsp;学号：
+            <input type="text" class="BR_edit_input" placeholder="学号">
+        </div>
+
+        <div class="BR_edit_message_right"> 姓名：
+            <input type="text" class="BR_edit_input" placeholder="姓名">
+        </div>
+    </div>
+    <div class="BR_edit_line">
+        <div class="BR_edit_message">宿舍号：
+            <input type="text" class="BR_edit_input" placeholder="宿舍号">
+        </div>
+        <div class="BR_edit_message_right"> 时间：
+            <input type="text" class="BR_edit_input" placeholder="时间">
+        </div>
+    </div>
+    <div class="BR_edit_line">
+        <div class="BR_edit_message"> &nbsp;&nbsp;&nbsp;备注：
+            <input type="text" class="BR_edit_input" placeholder="备注">
+        </div>
+        <div class="BR_edit_message_right"><button class="BR_btn_ensure">确认</button>
+        </div>
+    </div>
+</div>
+</div>
     <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
 </div>
 <script src="js/commonScript.js"></script>
 <script type="text/javascript">
     var dataDetail = document.getElementsByClassName("dataDetailsBox");
-        $('#table-BR tbody>tr>td').off('mouseover').on('mouseover',function(e){
-        if($(this).text().length > 20){
-            dataDetail[0].innerHTML= $(this).text();
+
+    $('#table-BR>tbody>tr>td').mouseover(function () {
+        if ($(this).text().length > 20) {
+            var x = event.pageX;
+            var y = event.pageY;
+            console.log(x);
+            console.log(y);
+            dataDetail[0].innerHTML = $(this).text();
+            // alert(event.pageX +" "+event.pageY);
+            dataDetail[0].style.left = x + "px";
+            dataDetail[0].style.top = y + "px";
+            dataDetail[0].style.display = "block";
         }
+
     });
 
-    dataDetail.style.display="none";
+    $('#table-BR>tbody>tr>td').mouseleave(function () {
+        dataDetail[0].innerHTML = "";
+        dataDetail[0].style.display = "none";
+    });
 
 
-</script>
-<script>
-    var dataDetail = document.getElementsByClassName("dataDetailsBox");
-    dataDetail[0].empty();
 </script>
 <!--<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>-->
 <!--<script src="https://unpkg.com/bootstrap-table@1.14.2/dist/locale/bootstrap-table-zh-CN.min.js">-->
