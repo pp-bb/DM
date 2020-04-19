@@ -1,3 +1,5 @@
+
+
 .BR_register {
     min-width: 1200px;
     background: rgba(0, 0, 0, 0);
@@ -18,9 +20,16 @@ tbody>tr:hover,tbody>tr:active{
 
 #table-BR {
     width: 1100px;
-    border: #c2c2c2 solid 1px;
     margin: 50px;
-    overflow-y:scroll
+    border: 0;
+    overflow-y:scroll;
+    font-size: 15px;
+    background:linear-gradient(135deg, #004259, #00151f) ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+    border-right: none;
+    text-align: center;
 }
 
 #table-BR td th {
@@ -30,10 +39,24 @@ tbody>tr:hover,tbody>tr:active{
     text-overflow: ellipsis;
     overflow: hidden;
 }
+#table-BR td,#table-BR th{
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    /*border-top: rgba(99, 99, 99, 0.75) 1px solid;*/
+}
+#table-BR thead th{
+    border-top: none;
+    text-align: center;
+}
 
 #table-BR>caption{
-    border:#c2c2c2 solid 1px;
-    color: #c2c2c2;
+    color: #ffffff;
+    background: rgba(28, 28, 28, 0.73);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
 }
 
 
@@ -52,6 +75,7 @@ tbody>tr:hover,tbody>tr:active{
     white-space: nowrap;
     overflow : hidden;
     text-overflow: ellipsis;
+    text-align: left;
 }
 .fixed-table-loading{
     display: none;
@@ -75,30 +99,96 @@ tbody>tr:hover,tbody>tr:active{
        break rule edit box
 
 ------------------------------------*/
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
+
 
 .BR_edit_box{
     width: 1100px;
     margin: 0px 50px;
     padding: 10px;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.03);
+    background:linear-gradient(135deg, rgba(0, 66, 89, 0.7), rgba(0, 21, 31, 0.7)) ;
     box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.58)
 }
 .BR_edit_line{
     width: 1080px;
-    margin: 20px 0px;
+    margin: 5px 0px;
     height: 80px;
     font-size: 18px;
 }
 .BR_edit_message{
     float: left;
     margin: 15px 0px 15px 120px;
-
 }
 .BR_edit_message_right{
     margin: 15px 120px 15px 0px;
     float: right;
 }
+.BR_name{
+    margin-right:174px ;
+}
+.BR_edit_input,.BR_edit_input:active,.BR_edit_input:focus,textarea {
+    color: #4e4e4e !important;
+    text-shadow: 0px 0px 0px #000;
+}
+
+/* WebKit browsers */
+.BR_edit_input::-webkit-input-placeholder {
+    color: #5a5a5a;
+    text-shadow: none; -webkit-text-fill-color: initial;
+}
+
+/* Mozilla Firefox 4 to 18 */
+.BR_edit_input:-moz-placeholder {
+    color: #5a5a5a;
+    opacity: 1;
+    text-shadow: none; -webkit-text-fill-color: initial;
+
+}
+/* Mozilla Firefox 19+ */
+.BR_edit_input::-moz-placeholder {
+    color: #5a5a5a;
+    opacity: 1;
+    text-shadow: none; -webkit-text-fill-color: initial;
+}
+/* Internet Explorer 10+ */
+.BR_edit_input:-ms-input-placeholder {
+    color: #5a5a5a;
+    text-shadow: none; -webkit-text-fill-color: initial;
+
+}
+.QPushButton {
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    border: 0 #004a79;
+    font-size: 20px;
+    color: #ffffff;
+    background: #004a79; /* 默认颜色 */
+}
+
+.QPushButton:hover {
+    font-size: 18px;
+    background: #2177b8; /* 悬停颜色 */
+    color: #1c1c1c;
+}
+.QPushButton:active {
+    font-size: 18px;
+    background: #2177b8; /* 悬停颜色 */
+    color: #ffffff;
+}
+
 .BR_btn_ensure{
     text-align-last:justify;
     text-align:justify;
@@ -112,6 +202,7 @@ tbody>tr:hover,tbody>tr:active{
     color: #fff;
     background-size: 200%;
     transition: 0.6s;
+    margin-right: 54px;
 }
 .BR_btn_ensure{
     background-image: linear-gradient(to left, #006794, #004c7b,#006794);

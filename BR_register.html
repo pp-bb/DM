@@ -12,7 +12,7 @@
 <div class="DM-container">
     <div class="contentBox BR_register">
         <div class="table_box">
-            <table class="table table-bordered" id="table-BR">
+            <table class="table table-bordered" id="table-BR" frame="void" >
                 <caption>今日违纪记录</caption>
                 <thead>
                 <tr>
@@ -47,6 +47,20 @@
                     <td>2020.4.1</td>
                     <td>抢了宿管大爷的棒棒糖</td>
                 </tr>
+                <tr>
+                    <td>李润东</td>
+                    <td>4681351</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>抢了宿管大爷的棒棒糖</td>
+                </tr>
+                <tr>
+                    <td>李润东</td>
+                    <td>4681351</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>抢了宿管大爷的棒棒糖</td>
+                </tr>
                 </tbody>
             </table>
 
@@ -59,7 +73,7 @@
             <input type="text" class="BR_edit_input" placeholder="学号">
         </div>
 
-        <div class="BR_edit_message_right"> 姓名：
+        <div class="BR_edit_message_right BR_name"> 姓名：
             <input type="text" class="BR_edit_input" placeholder="姓名">
         </div>
     </div>
@@ -68,7 +82,8 @@
             <input type="text" class="BR_edit_input" placeholder="宿舍号">
         </div>
         <div class="BR_edit_message_right"> 时间：
-            <input type="text" class="BR_edit_input" placeholder="时间">
+            <input type="text" class="BR_edit_input" placeholder="时间"   value=''  id="BR_time">
+            <button class="btn QPushButton" id="click">时</button>
         </div>
     </div>
     <div class="BR_edit_line">
@@ -105,6 +120,18 @@
         dataDetail[0].innerHTML = "";
         dataDetail[0].style.display = "none";
     });
+
+    $('#click').click(function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var day = date.getDate();
+        var hour =date.getHours();
+        var minute = date.getMinutes();
+        console.log(year+"."+month+"."+day+" "+hour+":"+minute);
+        // $('#BR_time').value = year+"."+month+"."+day+" "+hour+":"+minute+"";
+        document.getElementById('BR_time').value= year+"."+month+"."+day+" "+hour+":"+minute+"";
+     })
 
 
 </script>
