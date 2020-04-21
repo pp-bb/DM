@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/commonLink.js" charset="utf-8" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="css/borrow_register.css">
+</head>
+<body>
+<script src="js/commonHtml-sideNav.js" charset="utf-8" type="text/javascript"></script>
+<div class="DM-container">
+    <div class="contentBox borrow_register">
+        <div class="table_box">
+            <table class="table table-bordered" id="table-borrow" frame="void">
+                <caption>今日借用物品</caption>
+                <thead>
+                <tr>
+                    <th data-field="Name">姓名</th>
+                    <th data-field="S_Num">学号</th>
+                    <th data-field="D_Num">宿舍号</th>
+                    <th data-field="Date">时间</th>
+                    <th data-field="tools">物品</th>
+                    <th data-field="number">数量</th>
+                    <th data-field="remark">借用理由</th>
+                </tr>
+                </thead>
+                <tbody>
+                <div class="dataDetailsBox"></div>
+                <tr>
+                    <td>黄茂平</td>
+                    <td>13546</td>
+                    <td>19-410</td>
+                    <td>2020.4.1</td>
+                    <td>大爷的汗袜子</td>
+                    <td>2</td>
+                    <td>个人爱好</td>
+                </tr>
+                <tr>
+                    <td>李贤勋</td>
+                    <td>46841</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>卡布奇诺</td>
+                    <td>2</td>
+                    <td>送隔壁两位宿管阿姨卡布奇诺</td>
+                </tr>
+                <tr>
+                    <td>李润东</td>
+                    <td>4681351</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>用过的胖次</td>
+                    <td>2</td>
+                    <td>个人爱好</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="borrow_box">
+            <div class="box borrow_chart_box">
+                <canvas id="chart_borrow"></canvas>
+            </div>
+            <div class="box borrow_edit_box">
+                <div class="borrow_edit_message">学号：
+                    <input type="text" class="borrow_edit_input" placeholder="学号">
+                </div>
+
+                <div class="borrow_edit_message"> 物品：
+                    <input type="text" class="borrow_edit_input" placeholder="物品">
+                </div>
+                <div class="borrow_edit_message">数量：
+                    <input type="text" class="borrow_edit_input" placeholder="数量">
+                </div>
+                <div class="borrow_edit_message"> 时间：
+                    <input type="text" class="borrow_edit_input" placeholder="时间" value='' id="BR_time">
+                    <button class="btn QPushButton" id="click">时</button>
+                </div>
+                <div class="borrow_edit_message">理由：
+                    <textarea cols="22" rows="2" placeholder="备注"></textarea>
+                    <!--            <input type="text" class="borrow_edit_input" placeholder="备注">-->
+                </div>
+                <div class="borrow_edit_message">
+                    <button class="borrow_btn_ensure">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
+</div>
+<script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
+</div>
+<script type="text/javascript" src="js/commonScript.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById("chart_borrow").getContext("2d");
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ['拖鞋','卡布奇诺','拖把','扫帚','钳子'],
+            datasets: [{
+                backgroundColor: ['rgb(0,191,255)', 'rgb(255,126,0)', 'rgb(245,255,0)', 'rgb(0,255,36)', 'rgb(0,255,96)', 'rgb(54,255,97)'],
+                data: ['6', '5', '10', '15', '6'],
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+
+            title: {
+                display: true,
+                text: '物品借用情况',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend: {
+                display: true,
+                position: 'right',
+            },
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
+                }
+            },
+
+        }
+    });
+</script>
+</body>
+</html>

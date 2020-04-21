@@ -1,23 +1,17 @@
-
-
-.BR_register {
-    min-width: 1200px;
+.borrow_register{
+    min-width: 1100px;
     background: rgba(18, 18, 18, 0.07);
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93); /*blur值为15px*/
-    height: 80vh;
+    min-height:800px;
     color: #c2c2c2;
     margin-top: 70px;
 }
-
 tbody>tr:hover,tbody>tr:active{
     color: #c2c2c2;
     background-color: #00394d;
 }
-.table_box{
-}
-
-#table-BR {
+#table-borrow{
     width: 1100px;
     margin: 50px;
     border: 0;
@@ -31,56 +25,77 @@ tbody>tr:hover,tbody>tr:active{
     text-align: center;
 }
 
-#table-BR td th {
-    width: 200px;
+#table-borrow td, #table-borrow th {
+    width: 150px;
     table-layout: fixed;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-#table-BR td,#table-BR th{
+#table-borrow td,#table-borrow th{
     border-left: none;
     border-right: none;
     border-bottom: none;
     border-top: none;
     /*border-top: rgba(99, 99, 99, 0.75) 1px solid;*/
 }
-#table-BR thead th{
+#table-borrow thead th{
     border-top: none;
     text-align: center;
 }
 
-#table-BR>caption{
+#table-borrow>caption{
     color: #ffffff;
     background: rgba(28, 28, 28, 0.73);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     text-align: center;
 }
+#table-borrow th:nth-child(7){
+    width: 200px;
+}
 
-
-#table-BR th:nth-child(5){
-     width: 300px;
-     white-space: nowrap;
-     overflow : hidden;
-     text-overflow: ellipsis;
- }
-#table-BR td:nth-child(5){
-    width: 300px;
-    white-space: nowrap;
-    overflow : hidden;
-    text-overflow: ellipsis;
+#table-borrow td:nth-child(7){
+    width: 200px;
     text-align: left;
 }
 .fixed-table-loading{
     display: none;
 }
 
-/*----------------------------------
+/**------------------------------------------------
 
-       break rule edit box
+                    borrow box
 
-------------------------------------*/
+--------------------------------------------------*/
+.box{
+    background:linear-gradient(135deg, #004259, #00151f) ;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93); /*blur值为15px*/
+}
+.borrow_box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+    align-items:center;
+}
+/*----------------------
+       borrow edit
+-----------------------*/
+.borrow_edit_box{
+    width: 366px;
+    height: 480px;
+    /*margin: 20px;*/
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+}
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -91,80 +106,32 @@ tbody>tr:hover,tbody>tr:active{
     border-color: transparent;
     box-shadow:none;
 }
-
-
-.BR_edit_box{
-    width: 1100px;
-    margin: 0px 50px;
-    padding: 10px;
-    border-radius: 5px;
-    background:linear-gradient(135deg, rgba(0, 66, 89, 0.7), rgba(0, 21, 31, 0.7)) ;
-    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.58)
-}
-.BR_edit_line{
-    width: 1080px;
-    margin: 5px 0px;
-    height: 80px;
-    font-size: 18px;
-}
-.BR_edit_line:nth-child(3){
-    height: 110px;
+.borrow_edit_message{
+    margin-right: 15px;
 }
 
-.BR_edit_message{
-    float: left;
-    margin: 15px 0 15px 120px;
-}
-.dormitory{
-    margin: 21px 0 20px 120px;
-}
-.BR_edit_message_right{
-    margin: 15px 120px 15px 0px;
-    float: right;
-}
-.BR_name{
-    margin-right:174px ;
-}
-.BR_edit_input,.BR_edit_input:active,.BR_edit_input:focus,textarea {
+.borrow_edit_input,.borrow_edit_input:active,.borrow_edit_input:focus,textarea {
     color: #4e4e4e;
     text-shadow: 0px 0px 0px #000;
 }
 
 /* WebKit browsers */
-.BR_edit_input::-webkit-input-placeholder {
+.borrow_edit_input::-webkit-input-placeholder {
     color: #5a5a5a;
     text-shadow: none; -webkit-text-fill-color: initial;
-}
-
-/* Mozilla Firefox 4 to 18 */
-.BR_edit_input:-moz-placeholder {
-    color: #5a5a5a;
-    opacity: 1;
-    text-shadow: none; -webkit-text-fill-color: initial;
-
-}
-/* Mozilla Firefox 19+ */
-.BR_edit_input::-moz-placeholder {
-    color: #5a5a5a;
-    opacity: 1;
-    text-shadow: none; -webkit-text-fill-color: initial;
-}
-/* Internet Explorer 10+ */
-.BR_edit_input:-ms-input-placeholder {
-    color: #5a5a5a;
-    text-shadow: none; -webkit-text-fill-color: initial;
-
 }
 .QPushButton {
-    min-width: 50px;
-    max-width: 50px;
-    max-height: 50px;
-    min-height: 50px;
-    border-radius: 25px;
+    position: absolute;
+    width: 40px;
+    /*max-width: 50px;*/
+    height: 40px;
+    /*min-height: 50px;*/
+    border-radius: 20px;
     border: 0 #004a79;
     font-size: 20px;
     color: #ffffff;
-    background: #004a79; /* 默认颜色 */
+    background: #004a79; /* 默认颜色 */;
+    margin-left: 15px;
 }
 
 .QPushButton:hover {
@@ -178,7 +145,7 @@ tbody>tr:hover,tbody>tr:active{
     color: #ffffff;
 }
 
-.BR_btn_ensure{
+.borrow_btn_ensure{
     text-align-last:justify;
     text-align:justify;
     border:none;
@@ -191,11 +158,22 @@ tbody>tr:hover,tbody>tr:active{
     color: #fff;
     background-size: 200%;
     transition: 0.6s;
-    margin: 0px 54px 0px 0px;
+    margin: 0px 0px 0px 35px;
 }
-.BR_btn_ensure{
+.borrow_btn_ensure{
     background-image: linear-gradient(to left, #005479, #00304e,#005479);
 }
-.BR_btn_ensure:hover{
-     background-position: right;
- }
+.borrow_btn_ensure:hover{
+    background-position: right;
+}
+/*----------------------------------
+            borrow chart
+------------------------------------*/
+.borrow_chart_box{
+    background: rgba(16, 17, 15, 0.18);
+    width: 550px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
