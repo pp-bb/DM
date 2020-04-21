@@ -1,0 +1,182 @@
+.common_register{
+    min-width: 1100px;
+    background: rgba(18, 18, 18, 0.07);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93); /*blur值为15px*/
+    min-height:800px;
+    height: auto;
+    color: #c2c2c2;
+    margin-top: 70px;
+}
+td {
+    vertical-align:middle;
+    text-align:center;
+}
+tbody>tr:hover,tbody>tr:active{
+    color: #c2c2c2;
+    background-color: #00394d;
+}
+
+#table-register{
+    width: 1100px;
+    margin: 50px;
+    border: 0;
+    overflow-y:scroll;
+    font-size: 15px;
+    background:linear-gradient(135deg, #004259, #00151f) ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+th{
+    background: rgba(0, 171, 255, 0.11);
+}
+
+#table-register td , #table-register th {
+    width: 150px;
+    table-layout: fixed;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+#table-register thead th{
+    border-top: none;
+    text-align: center;
+}
+
+caption{
+    color: #ffffff;
+    background: rgba(28, 28, 28, 0.73);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    vertical-align:middle;
+}
+
+.fixed-table-loading{
+    display: none;
+}
+
+    /**------------------------------------------------
+
+                        message box
+
+    --------------------------------------------------*/
+.box{
+    background:linear-gradient(135deg, rgba(0, 66, 89, 0.82), rgba(0, 21, 31, 0.79)) ;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.93); /*blur值为15px*/
+}
+.message_box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+    align-items:center;
+    margin-bottom: 20px;
+}
+/*------------------------
+      message edit box
+-------------------------*/
+.message_edit_box{
+    width: 366px;
+    height: 480px;
+    /*margin: 20px;*/
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
+.message_edit_line{
+    margin-right: 15px;
+}
+
+.edit_input,.edit_input:active,.edit_input:focus,textarea {
+    color: #4e4e4e;
+    text-shadow: 0px 0px 0px #000;
+}
+
+/* WebKit browsers */
+.edit_input::-webkit-input-placeholder {
+    color: #5a5a5a;
+    text-shadow: none; -webkit-text-fill-color: initial;
+}
+.roundnessButton {
+    position: absolute;
+    width: 40px;
+    /*max-width: 50px;*/
+    height: 40px;
+    /*min-height: 50px;*/
+    border-radius: 20px;
+    border: 0 #004a79;
+    font-size: 20px;
+    color: #ffffff;
+    background: #004a79; /* 默认颜色 */;
+    margin-left: 15px;
+}
+
+.roundnessButton:hover {
+    font-size: 18px;
+    background: #2177b8; /* 悬停颜色 */
+    color: #1c1c1c;
+}
+.roundnessButton:active {
+    font-size: 18px;
+    background: #2177b8; /* 悬停颜色 */
+    color: #ffffff;
+}
+
+.message_btn_ensure{
+    text-align-last:justify;
+    text-align:justify;
+    border:none;
+    padding: 12px 60px;
+    width: 235px;
+    font-family: Tahoma,sans-serif;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background-size: 200%;
+    transition: 0.6s;
+    margin: 0px 0px 0px 35px;
+}
+.message_btn_ensure{
+    background-image: linear-gradient(to left, #005479, #00304e,#005479);
+}
+.message_btn_ensure:hover{
+    background-position: right;
+}
+/*----------------------------------
+            chart box
+------------------------------------*/
+.chart_box{
+    background: rgba(16, 17, 15, 0.18);
+    width: 550px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 15px;
+}
+

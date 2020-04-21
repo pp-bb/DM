@@ -74,6 +74,28 @@ input:focus,textarea:focus{
     align-content:space-around;
     overflow: hidden;
 }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
+.return_index{
+    position: absolute;
+    right: 0px;
+    width: 76px;
+    height: 36px;
+    border-radius: 15px;
+    background: #0b4965;
+    padding: 10px;
+    color: white;
+    margin: 15px;
+
+}
 /*table data detail*/
 .dataDetailsBox{
     position: absolute;

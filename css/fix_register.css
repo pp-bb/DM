@@ -1,0 +1,81 @@
+#table-register th:nth-child(6){
+    width: 200px;
+}
+
+#table-register td:nth-child(6){
+    width: 200px;
+}
+
+#table-register td{
+    line-height: 34px;
+}
+
+caption{
+    line-height: 34px;
+}
+.unfinished{
+    display: table;
+}
+
+#table-registerFix{
+    width: 1100px;
+    margin: 50px;
+    border: 0;
+    overflow-y:scroll;
+    font-size: 15px;
+    background:linear-gradient(135deg, #004259, #00151f) ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding-bottom: 15px;
+    display: none;
+}
+
+#table-registerFix td , #table-registerFix th {
+    width: 150px;
+    table-layout: fixed;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+#table-registerFix td{
+    line-height: 34px;
+}
+
+#table-registerFix thead th{
+    border-top: none;
+    text-align: center;
+
+}
+#table-registerFix th:nth-child(7){
+    width: 200px;
+}
+
+#table-registerFix td:nth-child(7){
+    width: 200px;
+}
+
+/* belong to message edit*/
+.phone_number{
+    margin-right: 38px;
+}
+
+/* button change to  fix success  */
+#fix_success{
+    float: right;
+    margin-right: 20px;
+    background-color: #00668d;
+    border: #00668d 1px solid;
+}
+#fix_unfinished{
+    float: right;
+    margin-right: 20px;
+    background-color: #00668d;
+    border: #00668d 1px solid;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/commonLink.js" charset="utf-8" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="css/common_register.css">
+    <link rel="stylesheet" href="css/fix_register.css">
+
+</head>
+<body>
+<script type="text/javascript" src="js/common-returnIndexBtn.js" charset="utf-8"></script>
+<script src="js/commonHtml-sideNav.js" charset="utf-8" type="text/javascript"></script>
+<div class="DM-container">
+    <div class="contentBox common_register">
+        <div class="table_box">
+            <table class="table table-bordered unfinished" id="table-register" frame="void">
+                <caption>维修登记<button class="btn btn-info" id="fix_success" >已完成</button></caption>
+                <thead>
+                <tr>
+                    <th data-field="Name">姓名</th>
+                    <th data-field="S_Num">学号</th>
+                    <th data-field="D_Num">宿舍号</th>
+                    <th data-field="phone">登记时间</th>
+                    <th data-field="Date">联系方式</th>
+                    <th data-field="remark">描述</th>
+                    <th data-field="state">是否完成</th>
+                </tr>
+                </thead>
+                <tbody>
+                <div class="dataDetailsBox"></div>
+                <tr>
+                    <td>黄茂平</td>
+                    <td>13546</td>
+                    <td>19-410</td>
+                    <td>2020.4.1</td>
+                    <td>16412418641</td>
+                    <td>阳台灯坏了</td>
+                    <td><button class="btn btn-success">确认</button> </td>
+                </tr>
+                <tr>
+                    <td>李贤勋</td>
+                    <td>46841</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>16412418641</td>
+                    <td>床塌了</td>
+                    <td><button class="btn btn-success">确认</button> </td>
+                </tr>
+                <tr>
+                    <td>李润东</td>
+                    <td>4681351</td>
+                    <td>19-408</td>
+                    <td>2020.4.1</td>
+                    <td>16412418641</td>
+                    <td>厕所爆*渠</td>
+                    <td><button class="btn btn-success">确认</button> </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table_box">
+            <table class="table table-bordered " id="table-registerFix" frame="void">
+                <caption>维修登记<button class="btn btn-info" id="fix_unfinished" >未完成</button></caption>
+                <thead>
+                <tr>
+                    <th data-field="S_Num">登记人学号</th>
+                    <th data-field="D_Num">宿舍号</th>
+                    <th data-field="phone">登记时间</th>
+                    <th data-field="remark">登记描述</th>
+                    <th data-field="remark">完成时间</th>
+                    <th data-field="state">学生评价</th>
+                    <th data-field="state">学生留言</th>
+                </tr>
+                </thead>
+                <tbody>
+                <div class="dataDetailsBox"></div>
+                <tr>
+                    <td>1615</td>
+                    <td>51-410</td>
+                    <td>2020.4.1</td>
+                    <td>阳台灯坏了</td>
+                    <td>2020.4.5</td>
+                    <td>优秀</td>
+                    <td>态度较差</td>
+                </tr>
+                <tr>
+                    <td>106541651</td>
+                    <td>32-401</td>
+                </tr>
+                <tr>
+                    <td>512681</td>
+                    <td>23-41</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="message_box">
+            <div class="box chart_box">
+                <canvas id="chart_fix"></canvas>
+            </div>
+            <div class="box message_edit_box">
+                <div class="message_edit_line">    学号：
+                    <input type="text" class="edit_input" placeholder="学号">
+                </div>
+                <div class="message_edit_line phone_number">联系方式：
+                    <input type="text" class="edit_input" placeholder="联系方式">
+                </div>
+                <div class="message_edit_line">    宿舍：
+                    <input type="text" class="edit_input" placeholder="宿舍">
+                </div>
+                <div class="message_edit_line">     时间：
+                    <input type="text" class="edit_input" placeholder="时间" value='' id="BR_time">
+                    <button class="btn roundnessButton" id="click">时</button>
+                </div>
+                <div class="message_edit_line">    描述：
+                    <textarea cols="22" rows="2" placeholder="描述"></textarea>
+                    <!--            <input type="text" class="borrow_edit_input" placeholder="备注">-->
+                </div>
+                <div class="message_edit_line">
+                    <button class="message_btn_ensure">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
+</div>
+</div>
+
+<script type="text/javascript" src="js/commonScript.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var ctx_fix = document.getElementById("chart_fix").getContext("2d");
+
+    //随机报修数
+    var fixNum = (function () {
+        var arr = [];
+        for (var i = 0; i < 7; i++) {
+            var r = Math.ceil(Math.random() * 10);
+            arr.push(r + '');
+        }
+        return arr.reverse();
+    })();
+
+    var chart = new Chart(ctx_fix, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+            datasets: [{
+                backgroundColor: 'rgb(0,191,255)',
+                borderColor: 'rgba(0,169,255,0.68)',
+                data: fixNum,
+            }]
+        },
+
+
+        // Configuration options go here
+        options: {
+
+            title: {
+                display: true,
+                text: '本周报修数量',
+                fontColor: "rgba(255,255,255,0.68)",
+            },
+            legend: {
+                display: false,
+                position: 'right',
+            },
+            label: {
+                font: {
+                    color: "rgba(255,255,255,0.73)"
+                }
+            },
+            segmentShowStroke: false
+        }
+    });
+
+    $('#click').click(function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        console.log(year + "." + month + "." + day + " " + hour + ":" + minute);
+        // $('#BR_time').value = year+"."+month+"."+day+" "+hour+":"+minute+"";
+        document.getElementById('BR_time').value = year + "." + month + "." + day + " " + hour + ":" + minute + "";
+    });
+
+    $('#fix_success').click(function () {
+        $('.unfinished')[0].style.display ="none";
+        $('#table-registerFix')[0].style.display = "table";
+    });
+    $('#fix_unfinished').click(function () {
+        $('.unfinished')[0].style.display ="table";
+        $('#table-registerFix')[0].style.display = "none";
+    });
+</script>
+</body>
+</html>

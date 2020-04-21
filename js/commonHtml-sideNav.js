@@ -1,3 +1,4 @@
+//侧边栏
 document.writeln("<div id=\'side-bar\'>");
 document.writeln("    <div class=\'overlay\'></div>");
 document.writeln("    <!-- Sidebar -->");
@@ -16,10 +17,10 @@ document.writeln("            <li>");
 document.writeln("                <a href=\'borrow_register.html\'><i class=\' fa fa-exchange\'></i>&nbsp;物品借用登记</a>");
 document.writeln("            </li>");
 document.writeln("            <li>");
-document.writeln("                <a href=\'#\'><i class=\' fa fa-wrench\'></i>&nbsp;维修信息登记</a>");
+document.writeln("                <a href=\'fix_register.html\'><i class=\' fa fa-wrench\'></i>&nbsp;维修信息登记</a>");
 document.writeln("            </li>");
 document.writeln("            <li>");
-document.writeln("                <a href=\'#\'><i class=\' fa fa-comment\'></i>&nbsp;访客信息登记</a>");
+document.writeln("                <a href=\'visitor_register.html\'><i class=\' fa fa-comment\'></i>&nbsp;访客信息登记</a>");
 document.writeln("            </li>");
 document.writeln("        </ul>");
 document.writeln("        <ul class=\'nav sidebar-nav second\'>");

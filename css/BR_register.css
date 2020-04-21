@@ -155,7 +155,7 @@ tbody>tr:hover,tbody>tr:active{
     text-shadow: none; -webkit-text-fill-color: initial;
 
 }
-.QPushButton {
+.roundnessButton {
     min-width: 50px;
     max-width: 50px;
     max-height: 50px;
@@ -167,12 +167,12 @@ tbody>tr:hover,tbody>tr:active{
     background: #004a79; /* 默认颜色 */
 }
 
-.QPushButton:hover {
+.roundnessButton:hover {
     font-size: 18px;
     background: #2177b8; /* 悬停颜色 */
     color: #1c1c1c;
 }
-.QPushButton:active {
+.roundnessButton:active {
     font-size: 18px;
     background: #2177b8; /* 悬停颜色 */
     color: #ffffff;
