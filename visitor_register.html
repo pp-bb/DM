@@ -5,6 +5,7 @@
     <script src="js/commonLink.js" charset="utf-8" type="text/javascript"></script>
 
     <link rel="stylesheet" href="css/common_register.css">
+    <link rel="stylesheet" href="css/visitor_register.css">
 </head>
 <body>
 <script type="text/javascript" src="js/common-returnIndexBtn.js" charset="utf-8"></script>
@@ -16,13 +17,13 @@
                 <caption>今日借用物品</caption>
                 <thead>
                 <tr>
-                    <th data-field="Name">姓名</th>
-                    <th data-field="S_Num">学号</th>
-                    <th data-field="D_Num">宿舍号</th>
-                    <th data-field="Date">时间</th>
-                    <th data-field="tools">物品</th>
-                    <th data-field="number">数量</th>
-                    <th data-field="remark">借用理由</th>
+                    <th data-field="Name">访客姓名</th>
+                    <th data-field="phone">联系方式</th>
+                    <th data-field="D_num">访问宿舍</th>
+                    <th data-field="rel">被访学生学号</th>
+                    <th data-field="result">来访原因</th>
+                    <th data-field="reach">到访时间</th>
+                    <th data-field="leave">离开时间</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,28 +32,28 @@
                     <td>黄茂平</td>
                     <td>13546</td>
                     <td>19-410</td>
+                    <td>2315435</td>
+                    <td>探亲</td>
                     <td>2020.4.1</td>
-                    <td>大爷的汗袜子</td>
-                    <td>2</td>
-                    <td>个人爱好</td>
+                    <td><input type="text" id="leave_time"><button class="btn btn-success btn-leave" id="leave_sure">确认</button> </td>
                 </tr>
                 <tr>
-                    <td>李贤勋</td>
-                    <td>46841</td>
-                    <td>19-408</td>
+                    <td>黄茂平</td>
+                    <td>13546</td>
+                    <td>19-410</td>
+                    <td>2315435</td>
+                    <td>探亲</td>
                     <td>2020.4.1</td>
-                    <td>卡布奇诺</td>
-                    <td>2</td>
-                    <td>送隔壁两位宿管阿姨卡布奇诺</td>
+                    <td>2020.5.4</td>
                 </tr>
                 <tr>
-                    <td>李润东</td>
-                    <td>4681351</td>
-                    <td>19-408</td>
+                    <td>黄茂平</td>
+                    <td>13546</td>
+                    <td>19-410</td>
+                    <td>2315435</td>
+                    <td>探亲</td>
                     <td>2020.4.1</td>
-                    <td>用过的胖次</td>
-                    <td>2</td>
-                    <td>个人爱好</td>
+                    <td>2020.5.4</td>
                 </tr>
                 </tbody>
             </table>
@@ -139,7 +140,21 @@
         console.log(year + "." + month + "." + day + " " + hour + ":" + minute);
         // $('#BR_time').value = year+"."+month+"."+day+" "+hour+":"+minute+"";
         document.getElementById('BR_time').value = year + "." + month + "." + day + " " + hour + ":" + minute + "";
+    });
+    
+    $('#leave_time').click(function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        hour = hour>10?hour:"0"+hour;
+        var minute = date.getMinutes();
+        minute = minute>10?minute:"0"+minute;
+        console.log(year + "." + month + "." + day + " " + hour + ":" + minute);
+        document.getElementById('leave_time').value = year + "." + month + "." + day + " " + hour + ":" + minute+"";
     })
+    
 </script>
 </body>
 </html>
