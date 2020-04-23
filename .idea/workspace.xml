@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd3b5945-8fad-4e67-94ae-d7e8600c1128" name="Default Changelist" comment="完成物品借用页面">
-      <change afterPath="$PROJECT_DIR$/css/visitor_register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D_allocation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/visitor_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/visitor_register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/commonHtml-sideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/commonHtml-sideNav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visitor_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/visitor_register.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +24,49 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/visitor_register.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="393">
-                  <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+                <state relative-caret-position="361">
+                  <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/common-nav.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/commonHtml-sideNav.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+                  <folding>
+                    <element signature="e#74#80#0" expanded="true" />
+                    <element signature="e#82#88#0" expanded="true" />
+                    <element signature="e#77#83#0" expanded="true" />
+                    <element signature="e#82#88#0" expanded="true" />
+                    <element signature="e#59#65#0" expanded="true" />
+                    <element signature="e#58#64#0" expanded="true" />
+                    <element signature="e#66#72#0" expanded="true" />
+                    <element signature="e#61#67#0" expanded="true" />
+                    <element signature="e#59#65#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/fix_register.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="142" selection-end-column="9" />
+                  <folding>
+                    <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -31,12 +74,21 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/visitor_register.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="513">
-                  <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+                <state relative-caret-position="342">
+                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/D_allocation.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="361">
+                  <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -45,7 +97,7 @@
             <entry file="file://$PROJECT_DIR$/css/common_register.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="735">
-                  <caret line="99" column="31" lean-forward="true" selection-start-line="96" selection-start-column="4" selection-end-line="99" selection-end-column="31" />
+                  <caret line="99" column="31" selection-start-line="96" selection-start-column="4" selection-end-line="99" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -58,8 +110,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -115,15 +167,16 @@
         <option value="$PROJECT_DIR$/css/BR_register.css" />
         <option value="$PROJECT_DIR$/css/base.css" />
         <option value="$PROJECT_DIR$/js/common-returnIndexBtn.js" />
-        <option value="$PROJECT_DIR$/js/commonHtml-sideNav.js" />
         <option value="$PROJECT_DIR$/BR_register.html" />
         <option value="$PROJECT_DIR$/css/borrow_register.css" />
         <option value="$PROJECT_DIR$/borrow_register.html" />
         <option value="$PROJECT_DIR$/fix_register.html" />
         <option value="$PROJECT_DIR$/css/fix_register.css" />
         <option value="$PROJECT_DIR$/css/common_register.css" />
-        <option value="$PROJECT_DIR$/css/visitor_register.css" />
         <option value="$PROJECT_DIR$/visitor_register.html" />
+        <option value="$PROJECT_DIR$/css/visitor_register.css" />
+        <option value="$PROJECT_DIR$/D_allocation.html" />
+        <option value="$PROJECT_DIR$/js/commonHtml-sideNav.js" />
       </list>
     </option>
   </component>
@@ -151,6 +204,11 @@
               <item name="DM_UI" type="b2602c69:ProjectViewProjectNode" />
               <item name="DM_UI" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DM_UI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DM_UI" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -215,6 +273,7 @@
       <workItem from="1587370815000" duration="13810000" />
       <workItem from="1587436657218" duration="20424000" />
       <workItem from="1587537854514" duration="5682000" />
+      <workItem from="1587650067499" duration="2082000" />
     </task>
     <task id="LOCAL-00001" summary="none">
       <created>1586858957646</created>
@@ -227,7 +286,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159571000" />
+    <option name="totallyTimeSpent" value="161653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -433,20 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/common-nav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/commonHtml-sideNav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BR_register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1482">
@@ -458,16 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fix_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="91" column="35" lean-forward="true" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
-          <folding>
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -489,24 +524,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/common_register.css">
+    <entry file="file://$PROJECT_DIR$/fix_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="99" column="31" lean-forward="true" selection-start-line="96" selection-start-column="4" selection-end-line="99" selection-end-column="31" />
+        <state relative-caret-position="180">
+          <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="142" selection-end-column="9" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/visitor_register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/common_register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="99" column="31" selection-start-line="96" selection-start-column="4" selection-end-line="99" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common-nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/commonHtml-sideNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="e#74#80#0" expanded="true" />
+            <element signature="e#82#88#0" expanded="true" />
+            <element signature="e#77#83#0" expanded="true" />
+            <element signature="e#82#88#0" expanded="true" />
+            <element signature="e#59#65#0" expanded="true" />
+            <element signature="e#58#64#0" expanded="true" />
+            <element signature="e#66#72#0" expanded="true" />
+            <element signature="e#61#67#0" expanded="true" />
+            <element signature="e#59#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visitor_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
+        <state relative-caret-position="361">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/D_allocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>

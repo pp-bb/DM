@@ -25,7 +25,7 @@ document.writeln("            </li>");
 document.writeln("        </ul>");
 document.writeln("        <ul class=\'nav sidebar-nav second\'>");
 document.writeln("            <div class=\'bar-header-s\'>学生住宿管理</div>");
-document.writeln("            <li><a href=\'#\'><i class=\'fa fa-users\'></i>&nbsp;预分配宿舍</a></li>");
+document.writeln("            <li><a href=\'D_allocation.html\'><i class=\'fa fa-users\'></i>&nbsp;预分配宿舍</a></li>");
 document.writeln("            <li><a href=\'#\'><i class=\'fa fa-edit\'></i>&nbsp;学生入住登记</a></li>");
 document.writeln("            <li><a href=\'#\'><i class=\'fa fa-minus-square\'></i>&nbsp;学生退宿</a></li>");
 document.writeln("            <li><a href=\'#\'><i class=\'fa fa-retweet\'></i>&nbsp;宿舍调整</a></li>");

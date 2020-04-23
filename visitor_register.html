@@ -63,23 +63,25 @@
                 <canvas id="chart_borrow"></canvas>
             </div>
             <div class="box message_edit_box">
-                <div class="message_edit_line">学号：
-                    <input type="text" class="edit_input" placeholder="学号">
+                <div class="message_edit_line">访客姓名：
+                    <input type="text" class="edit_input" placeholder="访客姓名">
                 </div>
 
-                <div class="message_edit_line"> 物品：
-                    <input type="text" class="edit_input" placeholder="物品">
+                <div class="message_edit_line"> 联系方式：
+                    <input type="text" class="edit_input" placeholder="联系方式">
                 </div>
-                <div class="message_edit_line">数量：
-                    <input type="text" class="edit_input" placeholder="数量">
+                <div class="message_edit_line">访问宿舍：
+                    <input type="text" class="edit_input" placeholder="访问宿舍">
                 </div>
-                <div class="message_edit_line"> 时间：
+                <div class="message_edit_line"> 被访学生学号：
+                    <input type="text" class="edit_input" placeholder="被访学生学号">
+                </div>
+                <div class="message_edit_line">来访时间：
                     <input type="text" class="edit_input" placeholder="时间" value='' id="BR_time">
                     <button class="btn roundnessButton" id="click">时</button>
                 </div>
-                <div class="message_edit_line">理由：
-                    <textarea cols="22" rows="2" placeholder="备注"></textarea>
-                    <!--            <input type="text" class="borrow_edit_input" placeholder="备注">-->
+                <div class="message_edit_line">来访理由：
+                    <textarea cols="22" rows="2" placeholder="理由"></textarea>
                 </div>
                 <div class="message_edit_line">
                     <button class="message_btn_ensure">确认</button>
@@ -93,18 +95,29 @@
 
 <script type="text/javascript" src="js/commonScript.js" charset="utf-8"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById("chart_borrow").getContext("2d");
-    var chart = new Chart(ctx, {
+
+
+    //随机报修数
+    var fixNum = (function () {
+        var arr = [];
+        for (var i = 0; i < 7; i++) {
+            var r = Math.ceil(Math.random() * 10);
+            arr.push(r + '');
+        }
+        return arr.reverse();
+    })();
+    var ctx_visit = document.getElementById("chart_borrow").getContext("2d");
+    var chart = new Chart(ctx_visit, {
         // The type of chart we want to create
-        type: 'pie',
+        type: 'line',
 
         // The data for our dataset
         data: {
-            labels: ['拖鞋', '卡布奇诺', '拖把', '扫帚', '钳子'],
+            labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
             datasets: [{
-                backgroundColor: ['rgb(0,191,255)', 'rgb(255,126,0)', 'rgb(245,255,0)', 'rgb(0,255,36)',
-                    'rgb(255,10,0)', 'rgb(255,0,201)'],
-                data: ['6', '5', '10', '15', '6'],
+                backgroundColor: 'rgb(0,191,255)',
+                borderColor: 'rgba(0,169,255,0.68)',
+                data: fixNum,
             }]
         },
 
@@ -114,11 +127,11 @@
 
             title: {
                 display: true,
-                text: '物品借用情况',
+                text: '本周访客数量',
                 fontColor: "rgba(255,255,255,0.68)",
             },
             legend: {
-                display: true,
+                display: false,
                 position: 'right',
             },
             label: {
