@@ -13,55 +13,429 @@
 <script src="js/commonHtml-sideNav.js" charset="utf-8" type="text/javascript"></script>
 <div class="DM-container">
     <div class="contentBox">
-        <div class="table_box">
-            <table class="table table-bordered" id="table-register" frame="void">
-                <caption>本批学生名单</caption>
+        <div class="btn-group pull-right">
+            <button class="btn btn-primary glyphicon glyphicon-th" data-toggle="dropdown" title="列">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu1">
+                <!--<li>
+                    <label>
+                        <input type="checkbox" checked="checked">ID
+                    </label>
+                </li>-->
+            </ul>
+            <button class="btn btn-warning glyphicon glyphicon-refresh" id="refreshBtn" title="刷新"></button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade in text-center"
+             id="deleteConfirm" style="display: none">
+            <button type="button" class="close">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <h4>确认删除？</h4>
+            <p>
+                <button type="button" class="btn btn-danger confirm">确定</button>
+                <button type="button" class="btn btn-default">取消</button>
+            </p>
+        </div>
+        <div class="modal fade" id="addDiv">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <h4 class="text-center">add user</h4>
+                    </div>
+                    <form action="#" method="post">
+                        <div class="modal-body form-group">
+                            <label for="usernameInput">username</label>
+                            <input type="text" id="usernameInput" name="username">
+                        </div>
+                        <div class="modal-body form-group">
+                            <label for="passwordInput">password</label>
+                            <input type="password" id="passwordInput" name="password">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-dismiss="modal">
+                                summit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive" id="tableBlock">
+            <table class="table table-striped table-hover table-condensed">
                 <thead>
                 <tr>
-                    <th>复选框</th>
-                    <th data-field="Name">姓名</th>
-                    <th data-field="phone">学号</th>
-                    <th data-field="D_num">性别</th>
-                    <th data-field="rel">学院</th>
-                    <th data-field="result">班级</th>
+                    <th></th>
+                    <th><input type="checkbox" title="全选" id="selectAllCheckBox"/></th>
+                    <th>ID</th>
+                    <th>username</th>
+                    <th>password</th>
+                    <th>sex</th>
+                    <th>age</th>
+                    <th>options</th>
                 </tr>
                 </thead>
                 <tbody>
-                <div class="dataDetailsBox"></div>
                 <tr>
-                    <td><input role="checkbox" type="checkbox"></td>
-                    <td>黄茂平</td>
-                    <td>13546</td>
-                    <td>19-410</td>
-                    <td>2315435</td>
-                    <td>探亲</td>
-                    <td>2020.4.1</td>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>黄茂平</td>
-                    <td>13546</td>
-                    <td>19-410</td>
-                    <td>2315435</td>
-                    <td>探亲</td>
-                    <td>2020.4.1</td>
-                    <td>2020.5.4</td>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>黄茂平</td>
-                    <td>13546</td>
-                    <td>19-410</td>
-                    <td>2315435</td>
-                    <td>探亲</td>
-                    <td>2020.4.1</td>
-                    <td>2020.5.4</td>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <span class="detail glyphicon glyphicon-plus" title="详情"></span>
+                    </td>
+                    <td><input type="checkbox" class="single-checkbox" title="select"></td>
+                    <td>1</td>
+                    <td>u1</td>
+                    <td>p1</td>
+                    <td>male</td>
+                    <td>18</td>
+                    <td>
+                        <a href="#" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal"
+                           data-target="#editDiv" title="编辑"></a>
+                        <a href="#" class="btn btn-danger glyphicon glyphicon-trash btn-single-delete" title="删除"></a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
         </div>
+        <nav class="text-center">
+            <ul class="pagination">
+                <li class="previous"><a href="#"><span>&laquo;</span></a></li>
+                <li class="active number"><a href="#">1</a></li>
+                <li class="number"><a href="#">2</a></li>
+                <li class="number"><a href="#">3</a></li>
+                <li class="number"><a href="#">4</a></li>
+                <li class="number"><a href="#">5</a></li>
+                <li class="number"><a href="#">6</a></li>
+                <li class="next"><a href="#"><span>&raquo;</span></a></li>
+            </ul>
+        </nav>
     </div>
-    <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>
+    <div class="modal fade" id="editDiv">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                    <h4 class="text-center">edit user</h4>
+                </div>
+                <form action="#" method="post">
+                    <div class="modal-body form-group">
+                        <label for="usernameEditInput">username</label>
+                        <input type="text" id="usernameEditInput" name="username">
+                    </div>
+                    <div class="modal-body form-group">
+                        <label for="passwordEditInput">password</label>
+                        <input type="password" id="passwordEditInput" name="password">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">
+                            summit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--    <script src="js/commonHtml-rightFrame.js" charset="utf-8" type="text/javascript"></script>-->
 </div>
 <script type="text/javascript" src="js/commonScript.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //确认删除区域
+        var deleteConfirmBlock = $("#deleteConfirm");
+        var singleCheckBoxes = $(".single-checkbox");
+        var selectAllCheckBox = $("#selectAllCheckBox");
+        var multiDeleteBtn = $("#multiDeleteBtn");
+        var dropdownMenu1 = $("#dropdownMenu1");
 
+        //显示确认删除警告框
+        $(".btn-single-delete").click(function () {
+            deleteConfirmBlock.slideDown();
+        });
+
+        multiDeleteBtn.click(function () {
+            if (singleCheckBoxes.filter(":checked").length === 0) {
+                $(this).popover('show');
+                setTimeout(function () {
+                    multiDeleteBtn.popover('hide');
+                }, 1000);
+            } else {
+                deleteConfirmBlock.slideDown();
+            }
+        });
+
+        //隐藏确认删除警告框
+        deleteConfirmBlock.find("button").click(function () {
+            deleteConfirmBlock.hide(500);
+        });
+
+        //点击确认删除后的操作
+        deleteConfirmBlock.find(".confirm").click(function () {
+            // delete the selected item
+        });
+
+        var pageNumBtns = $(".pagination .number");
+
+        //切换页码中的高亮页
+        pageNumBtns.click(function () {
+            pageNumBtns.removeClass("active");
+            $(this).addClass("active");
+        });
+
+        //前一页的操作
+        $(".pagination .previous").click(function () {
+            var activePageObject = $(".pagination .active");
+            var pageNum = parseInt(activePageObject.text());
+            activePageObject.removeClass("active");
+            if (pageNum === parseInt(pageNumBtns.first().text())) {
+                pageNumBtns.last().addClass("active");
+                return;
+            }
+            pageNumBtns.each(function () {
+                if ($(this).text() === pageNum - 1 + "") {
+                    $(this).addClass("active");
+                    return false;
+                }
+            });
+        });
+
+        //后一页的操作
+        $(".pagination .next").click(function () {
+            var activePageObject = $(".pagination .active");
+            var pageNum = parseInt(activePageObject.text());
+            activePageObject.removeClass("active");
+            if (pageNum === parseInt(pageNumBtns.last().text())) {
+                pageNumBtns.first().addClass("active");
+                return;
+            }
+            pageNumBtns.each(function () {
+                if ($(this).text() === pageNum + 1 + "") {
+                    $(this).addClass("active");
+                    return false;
+                }
+            });
+        });
+
+        //表头内容数组
+        var thsText = [];
+        $("table").find("th").each(function () {
+            thsText.push($(this).text());
+        });
+
+        //显示表格一条的具体信息
+        $(".detail").parents("td").click(function () {
+            $(this).find("span").toggleClass("glyphicon-plus glyphicon-minus");
+
+            if ($(this).parents("tr").next().hasClass("detail-block")) {
+                $(this).parents("tr").next().fadeOut(function () {
+                    $(this).remove();
+                });
+                return;
+            }
+            var tdsText = [];
+            $(this).parents("tr").children().each(function () {
+                tdsText.push($(this).text());
+            });
+
+            var detailContent = '';
+            for (var i = 2; i < thsText.length - 1; i++) {
+                detailContent += '<dt>' + thsText[i] + ':</dt><dd>' + tdsText[i] + '</dd>';
+            }
+            var colNum = $(this).parents("tr").children().length;
+            var detail = '<tr class="detail-block info">\n' +
+                '                <td colspan="' + colNum + '">' +
+                '<dl class="dl-horizontal">\n' +
+                detailContent +
+                '</dl>' +
+                '</td>\n' +
+                '         </tr>';
+            $(this).parents("tr").after(detail);
+            var newRow = $(this).parents("tr").next();
+            newRow.hide();
+            newRow.fadeIn("slow");
+        });
+
+        //set table show animate
+        var tableBlock = $("#tableBlock");
+        tableBlock.hide();
+        tableBlock.slideDown(1000);
+
+        // checkbox select all
+        selectAllCheckBox.click(function () {
+            if ($(this).is(':checked')) {
+                singleCheckBoxes.prop("checked", true);
+            } else {
+                singleCheckBoxes.prop("checked", false);
+            }
+        });
+        singleCheckBoxes.click(function () {
+            if ($(this).is(':checked')) {
+                if (singleCheckBoxes.length === singleCheckBoxes.filter(":checked").length) {
+                    selectAllCheckBox.prop("checked", true);
+                }
+            } else {
+                selectAllCheckBox.prop("checked", false);
+            }
+        });
+
+        $("#refreshBtn").click(function () {
+            window.location.reload(true);
+        });
+
+        // init dropdown menu content
+        var dropdownMenuContent = '';
+        for (var i in thsText) {
+            if (thsText[i].trim().length !== 0) {
+                dropdownMenuContent += '<li>\n' +
+                    '                <label>\n' +
+                    '                    <input type="checkbox" checked="checked">' + thsText[i] + '\n' +
+                    '                </label>\n' +
+                    '            </li>';
+            }
+        }
+        dropdownMenu1.html(dropdownMenuContent);
+
+        // toggle a column of table
+        dropdownMenu1.find("input").click(function () {
+            var index = thsText.indexOf($(this).parents("label").text().trim());
+            // toggle th
+            tableBlock.find("th").eq(index).toggle();
+            // toggle td
+            tableBlock.find("tr").each(function () {
+                $(this).find("td").eq(index).toggle();
+            });
+        });
+    });
+</script>
 </body>
 </html>
